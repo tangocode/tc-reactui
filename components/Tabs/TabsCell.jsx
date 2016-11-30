@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TabsColumn = (
+const TabsCell = (
   props
 ) => {
-  let className = props.className ? ['grid-column', ...props.className] : ['grid-column'];
+  let className = props.className ? ['tabs-cell', ...props.className] : ['tabs-cell'];
   let style = Object.assign({}, props.style);
   if (props.width) { style.width = props.width; }
 
@@ -21,11 +21,11 @@ const TabsColumn = (
   return content;
 };
 
-TabsColumn.propTypes = {
+TabsCell.propTypes = {
   className: React.PropTypes.array,
   style: React.PropTypes.object,
-  column: React.PropTypes.object
+  // column: React.PropTypes.object
 };
 
-export default TabsColumn;
+export default TabsCell;
 

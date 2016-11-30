@@ -19,18 +19,10 @@
   border-bottom: 7px solid #EDEFF1;
   padding: 18px; }
 
-/*.grid-column, .grid-item {
-  text-align: left;
-  font-weight: 300;
-  color: #798392; }*/
-
 .grid-column, .grid-item {
   text-align: left;
   font-weight: 300;
-  color: #798392;
-  background: red;
-  margin: 10px;
-}
+  color: #798392; }
 
 .grid-column {
   cursor: pointer; }
@@ -39,6 +31,40 @@
   color: #65B989; }
   .grid-link:hover {
     color: #4e956c; }
+
+.tabs{
+  display: flex;
+  flex-direction: row;
+  max-width: 923px;
+  height: 56px;
+  background: red;
+  font-weight: 400;
+  color: #0D2832;
+  background-color: none;
+  font-size: 17px;
+  padding: 0px;
+}
+
+.tabs-cell {
+  height: 56px;
+  max-width: 227px;
+  min-width: 227px;
+  text-align: left;
+  font-weight: 300;
+  color: white;
+  background: grey;
+  /*margin: 10px;*/
+  border-radius: 5px;
+  /*display: inline-block;*/
+  /*float: left;*/
+  text-align: center;
+}
+
+.tabs-cell:not(:first-child) {
+    margin-left: 5px;
+}
+
+
 
 .fa-signal {
   color: #EDEFF1; }
