@@ -1,0 +1,60 @@
+/* Colors */
+.grid {
+  width: 100%;
+  background-color: #EDEFF1; }
+
+.grid-header {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  color: #0D2832;
+  background-color: none;
+  font-size: 17px;
+  padding: 20px; }
+
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  background: #FFFFFF;
+  border-bottom: 7px solid #EDEFF1;
+  padding: 18px; }
+
+.grid-column, .grid-item {
+  text-align: left;
+  font-weight: 300;
+  color: #798392; }
+
+.grid-column {
+  cursor: pointer; }
+
+.grid-link {
+  color: #65B989; }
+  .grid-link:hover {
+    color: #4e956c; }
+
+.fa-signal {
+  color: #EDEFF1; }
+
+.active {
+  color: #65B989; }
+
+.fa-exclamation-triangle {
+  color: #F5A623; }
+
+.single p {
+  color: #52B1CA; }
+
+.load {
+  text-align: center;
+  padding: 40px;
+  color: #52B1CA; }
+
+html {
+  width: 100%;
+  height: 100%; }
+  html body {
+    width: 100%;
+    height: 100%;
+    font-family: 'helvetica', sans-serif; }
+
+/*# sourceMappingURL=style.css.map */

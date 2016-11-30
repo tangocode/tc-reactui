@@ -1,0 +1,56 @@
+.grid {
+  //max-width: 960px;
+  //margin: 60px auto;
+  width: 100%; 
+  background-color: $color6;
+}
+.grid-header {
+  display: flex;
+  flex-direction: row;
+  font-weight: 400;
+  color: $color2;
+  background-color: none;
+  font-size: 17px; 
+  padding: 20px;
+}
+.grid-row {
+  display: flex;
+  flex-direction: row;
+  background: $color7;
+  border-bottom: 7px solid $color6;
+  padding: 18px;
+}
+.grid-column, .grid-item {
+  text-align: left;
+  font-weight: 300;
+  color: $color5;
+}
+.grid-column{
+  cursor: pointer;
+}
+.grid-link {
+  color:$color9;
+  &:hover{
+    color:#4e956c;
+  }
+}
+
+.fa-signal{
+  color: $color6;
+}
+.active{
+  color: $color9;
+}
+.fa-exclamation-triangle{
+  color: $color8;
+}
+
+.single p{
+  color: $color4;
+}
+
+.load{
+  text-align:center;
+  padding: 40px;
+  color: $color4;
+}
