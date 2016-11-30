@@ -1,0 +1,22 @@
+/* Colors */
+$color1: #F6F7F8;
+$color2: #0D2832;
+$color3: #253D46;
+$color4: #52B1CA;
+$color5: #798392;
+$color6: #EDEFF1;
+$color7: #FFFFFF;
+$color8: #F5A623;
+$color9: #65B989;
+
+@import '_grid';
+
+html{
+	width: 100%;
+    height: 100%;
+	body {
+	    width: 100%;
+	    height: 100%;
+		  font-family: 'helvetica', sans-serif;
+	}
+}
