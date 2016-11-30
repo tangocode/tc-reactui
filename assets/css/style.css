@@ -19,10 +19,18 @@
   border-bottom: 7px solid #EDEFF1;
   padding: 18px; }
 
+/*.grid-column, .grid-item {
+  text-align: left;
+  font-weight: 300;
+  color: #798392; }*/
+
 .grid-column, .grid-item {
   text-align: left;
   font-weight: 300;
-  color: #798392; }
+  color: #798392;
+  background: red;
+  margin: 10px;
+}
 
 .grid-column {
   cursor: pointer; }
