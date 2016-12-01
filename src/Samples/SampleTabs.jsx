@@ -8,15 +8,18 @@ const SampleTabs = () => {
 
   const basicTabs = {
     metadata: [
-      { tabID: '1', highlighted: true, title: 'Information'},
-      { tabID: '2', highlighted: false, title: 'Scheduling'},
-      { tabID: '3', highlighted: false, title: 'Integrations'},
-      { tabID: '5', highlighted: false, title: 'Activity'}
+      { tabID: '1', label: 'Information'},
+      { tabID: '2', label: 'Scheduling'},
+      { tabID: '3', label: 'Integrations'},
+      { tabID: '4', label: 'Activity'}
     ]
   };
 
 
   const classNames = ['fuck-off'];
+  // classNames will be property of component that can override a default style
+
+  const style = []
 
   // renderTab(id) {
 
@@ -31,7 +34,8 @@ const SampleTabs = () => {
     <div>
       <Tabs
         metadata={basicTabs.metadata}
-        // className
+        //
+        // className kxzckm;cz
         // callback retrun id
       />
     </div>

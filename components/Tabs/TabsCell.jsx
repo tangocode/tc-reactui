@@ -1,30 +1,45 @@
 import React from 'react';
 
-const TabsCell = (
-  props
-) => {
-  let className = props.className ? ['tabs-cell', ...props.className] : ['tabs-cell'];
-  let style = Object.assign({}, props.style);
-  if (props.width) { style.width = props.width; }
+class TabsCell extends React.Component {
 
-  let content = (
-    <span className={className} style={style}>
-      {props.children}
-    </span>
-  );
-  if (!props.children) {
-    content = (
-      <span className={className} style={style}>{props.title}</span>
+  componentDidMount() {
+    // debugger
+  }
+
+  generateContent() {
+    let className = this.props.className ? ['tabs-cell', ...this.props.className] : ['tabs-cell'];
+    let style = Object.assign({}, this.props.style);
+
+    if (this.props.width) { style.width = this.props.width; }
+
+    let content = (
+      <span className={className} style={style}>
+        {this.props.children}
+      </span>
+    );
+    if (!this.props.children) {
+      content = (
+        <div className={className.join(' ')}  style={style} onClick={this.props.tabClicked.bind(this, this.props.cell.tabID)}>
+          <span>{this.props.cell.label}</span>
+        </div>
+      );
+    }
+    return content;
+  }
+
+  render() {
+    return (
+      <div className={'tabs-cell-outer'}>
+        {this.generateContent()}
+      </div>
     );
   }
 
-  return content;
 };
 
 TabsCell.propTypes = {
   className: React.PropTypes.array,
   style: React.PropTypes.object,
-  // column: React.PropTypes.object
 };
 
 export default TabsCell;
