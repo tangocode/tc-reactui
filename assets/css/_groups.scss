@@ -1,0 +1,100 @@
+.hidden2  {
+    opacity: 0;
+}
+.hidden[type="radio"]:checked + label {
+    background: $color7;
+}
+.navgroups{
+	padding: 30px; 
+}
+.navleft{
+	float: left;
+	margin-top: -5px; 
+}
+.navright{
+	float: right;
+  a:hover, a:focus{
+    text-decoration: none;
+  }
+}
+
+table span{
+	font-size:12px; 
+}
+.groups tbody tr{
+  background: $color7;
+  margin-bottom: 7px;
+}
+
+.groups-members, .profile{
+  background-color:$color7;
+  margin-top: 20px; 
+  p{
+    font-size:12px; 
+  }
+  h2{
+    font-size:16px; 
+  }
+}
+.notice{
+  background-color:$color7;
+  margin-top: 95px; 
+  p{
+    font-size:12px; 
+  }
+}
+
+
+.groups label {
+    order: 1; 
+    display: block;
+    padding: 1.5rem 4rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: transparent;
+    color: $color5;
+    transition: background ease 0.2s;
+}
+.groups input[type=checkbox] { display:none; } /* to hide the checkbox itself */
+.groups input[type=checkbox] + label{
+  padding-left:10px;
+  margin: 10px;
+}
+.groups input[type=checkbox] + label:before {
+  font-family: FontAwesome;
+  display: inline-block;
+  position:absolute;
+  left:0;
+  color:$color5;
+  font-size:20px;
+  margin-top:-2px;
+}
+.groups input[type=checkbox] + label:after{
+  font-family: FontAwesome;
+  display: inline-block;
+  position:absolute;
+  left:-3px;
+  color:$color4;
+  font-size:26px;
+  margin-top:-3;
+}
+.groups input:hover[type=checkbox] + label:before,input:hover[type=checkbox] + label:after {
+  color:$color4;
+}
+.groups input[type=checkbox] + label:before { content: "\f1db"; } 
+
+.groups input[type=checkbox]:checked + label:after { 
+  margin-top:-25px;
+  content: "\f111";
+  -webkit-transform:scale(0.45);
+  -ms-transform:scale(0.45);
+  transform:scale(0.45);
+  -webkit-transform-origin:0.45em 0.5em;
+  -ms-transform-origin:0.45em 0.5em;
+  transform-origin:0.45em 0.5em;
+}
+
+
+
+
+

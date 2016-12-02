@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import GridItem from './GridItem.jsx';
 
-class GridItem extends Component {
+class GridImageItem extends GridItem {
   render() {
 
     /* Custom Styling config - Start */
@@ -13,17 +14,10 @@ class GridItem extends Component {
     /* Custom Content config - Start */
 
     let content = (
-      <div className={className} style={style} onClick={this.props.onClick}>
-      {this.props.children}
+      <div className={className} style={style} >
+        <img src={this.props.image} onClick={this.props.onClick}/>
       </div>
     );
-    if (!this.props.children) {
-      content = (
-        <div className={className} style={style}>
-          <p onClick={this.props.onClick}>{this.props.value}</p>
-        </div>
-      );
-    }
 
     /* Custom Content config - End */
 
@@ -31,12 +25,12 @@ class GridItem extends Component {
   }
 }
 
-GridItem.propTypes = {
+GridImageItem.propTypes = {
   item: React.PropTypes.object,
   className: React.PropTypes.array,
   style: React.PropTypes.object,
-  value: React.PropTypes.string,
-  onClick: React.PropTypes.func,
+  image: React.PropTypes.string,
+  onClick: React.PropTypes.func
 };
 
-export default GridItem;
+export default GridImageItem;

@@ -6,7 +6,7 @@ const GridBody = (
 ) => {
   /* Custom Styling config - Start */
 
-  const className = props.className ? ['grid-body', ...props.className] : ['grid-body'];
+  const className = props.className ? [...props.className] : [];
   const style = Object.assign({}, props.style);
 
   /* Custom Styling config - End */
@@ -32,7 +32,6 @@ const GridBody = (
     const rows = props.rows ? props.rows : [];
     const cells = props.cells ? props.cells : [];
     const data = props.data ? props.data : [];
-    console.dir(data);
     content = (
       <div className={className} style={style}>
         {data.map(item => {

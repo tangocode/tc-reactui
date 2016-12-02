@@ -1,0 +1,82 @@
+#form form span {
+  background-color: $color6;
+  color: $color3;
+  display: block;
+  float: left;
+  line-height: 50px;
+  text-align: center;
+  width: 30%;
+  height: 50px;
+  padding: 0 20px 0 20px;
+}
+
+#form form input[type="text"] {
+  background-color: $color1;
+  color: $color2;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 70%;
+  height: 50px;
+  outline: none; 
+  &:focus[type="text"] {
+    background-color: $color5;
+    transition: background 0.2s ease-in-out;
+  }
+}
+
+#form form input[type="password"] {
+  background-color: $color1;
+  color: $color2;
+  margin-bottom: 1em;
+  padding: 0 16px;
+  width: 250px;
+  height: 50px;
+  outline: none; 
+}
+
+input[type="submit"] {
+  background: $color4;
+  border: 0;
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top:40px;
+}
+input[type="submit"]:hover {
+  background: #408fa3;
+}
+
+// .delete-client{
+//    background-color: $color6;
+//  }
+.delete-client input[type="reset"] {
+  background-color: transparent;
+  width:100%;
+  height:40px;
+  //padding:4px 8px;
+  border:1px solid $color2;
+  border-radius:4px;
+  -webkit-border-radius:4px;
+  -moz-border-radius:4px;
+  outline:0;
+  color:$color2;
+  -webkit-transition:all .2s ease-in-out;
+  -moz-transition:all .2s ease-in-out;
+  transition:all .2s ease-in-out;
+  margin: 30px 0 30px 0;
+}
+.delete-client input[type="reset"]:hover {
+  background: $color3;
+  color: $color7;
+}
+.services i{
+  padding: $services-i;
+  background-color:$color1;
+  margin-left: 0.3em;
+}
+.services >a {
+  color:$color2;
+}

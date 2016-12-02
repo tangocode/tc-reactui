@@ -1,0 +1,128 @@
+#table-client table {
+  width: 100%; 
+}
+#table-client thead tr th {
+  font-weight: 400;
+  color: $color2;
+  background-color: none;
+  font-size: 17px; 
+}
+#table-client tbody tr , #table-client tfoot tr{
+  background: $color7;
+  border-bottom: 7px solid $color6;
+  margin-bottom: 10px;
+}
+#table-client tbody a{
+  color:$color9;
+  &:hover{
+  color:#4e956c;
+}
+}
+#table-client th, td {
+  text-align: left;
+  padding: 20px;
+  font-weight: 300;
+  color: $color5;
+}
+#table-client th{
+  cursor: pointer;
+}
+#table-client tbody tr th{
+  padding: 20px;
+
+}
+#table-client thead tr th{
+  padding: 18px;
+}
+#table-client tfoot tr th{
+  padding: 18px;
+}
+#table-client tfoot{
+}
+
+
+
+
+
+.fa-signal{
+  color: $color6;
+}
+.active{
+  color: $color9;
+}
+.fa-exclamation-triangle{
+  color: $color8;
+}
+
+.single p{
+  color: $color4;
+}
+
+.load{
+  text-align:center;
+  padding: 40px;
+  color: $color4;
+}
+
+.client-list{
+  display: flex;
+}
+.client-list i{
+  padding: 18px;
+  text-align:center; 
+  p{
+    font-size:7px;
+    margin-top: 4px;  
+  }
+}
+.client-list h2{
+   margin-top: 15px;
+   font-size:16px; 
+}
+
+
+.list{
+  display: flex;
+  background-color:$color7;
+  margin-top: 20px; 
+}
+.list i{
+   padding: 23px 18px 0 18px;
+   text-align:center;
+   p{
+    font-size:7px;
+    margin-top: 4px;  
+  }
+}
+.list img{
+   margin-top: 23px;
+}
+.list p{
+   margin-top: 23px;
+   padding: 0 0 19px 0;
+}
+
+.users{
+  display: flex;
+}
+.users-list{
+  display: flex;
+  background-color:$color6;
+  margin-top: 20px; 
+  padding: 20px;
+}
+.users-list .fa-file-text{
+  color:$color9;
+  &:hover{
+    color:#4e956c;
+  }
+}
+.users-list .fa-pencil{
+  color:$color5;
+  margin-top:5px; 
+  &:active{
+    color:#4e956c;
+  }
+}
+
+
