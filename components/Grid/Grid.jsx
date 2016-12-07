@@ -16,14 +16,16 @@ class Grid extends Component {
   }
 
   sortLocal(field, ascending) {
-    let sortedData = this.state.data.sort((a, b) => {
-      if (a[field] < b[field])
-        return -1;
-      if (a[field] > b[field])
-        return 1;
-      return 0;
-    });
-    if (!ascending) {
+    let sortedData;
+    if (ascending) {
+      sortedData = this.state.data.sort((a, b) => {
+        if (a[field] < b[field])
+          return -1;
+        if (a[field] > b[field])
+          return 1;
+        return 0;
+      });
+    } else if {
       sortedData = this.state.data.sort((a, b) => {
         if (a[field] > b[field])
           return -1;
