@@ -74,6 +74,19 @@ module.exports = {
         ]
       },
       {
+        test: /.(woff(2)?|eot|ttf|svg)(\?[a-z0-9=\.]+)?$/,
+        loader: 'url-loader?limit=100000',
+        include: path.join(__dirname, 'assets')
+      },
+      {
+        test: /\.(jpe?g|png|gif|svg|woff|woff2|eot|ttf)$/i,
+        loaders: [
+          'file?hash=sha512&digest=hex&name=[hash].[ext]',
+          'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ],
+        include: path.join(__dirname, 'assets')
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader',
         include: [

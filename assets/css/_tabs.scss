@@ -1,0 +1,120 @@
+/* .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 99%;
+}
+.tabs label {
+    order: 1; 
+    display: block;
+    padding: 1rem 4rem;
+    margin-right: 0.2rem;
+    cursor: pointer;
+    background: $color2;
+    color: $color7;
+    transition: background ease 0.2s;
+}
+.tabs .tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    background: $color7; 
+    //padding: 1rem; 
+}
+.tabs input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+.tabs input[type="radio"]:checked + label {
+    background: $color7;
+    color: $color4;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+@media (max-width: 45em) {
+    .tabs .tab,
+    .tabs label {
+        order: initial;
+    }
+    .tabs label {
+        width: 100%;
+        margin-right: 0;
+        margin-top: 0.2rem;
+    }
+}
+
+label{
+  margin-bottom: 0px;
+} */
+
+
+
+
+
+#tabs{
+  width:90%;
+  margin:0 auto;
+  margin-top:2%;
+  margin-bottom:2%;
+  border-radius:3px;
+}
+
+input[type="radio"]{
+  display:none;
+}
+
+label{
+  background:$color2;
+  color:$color7;
+  display:inline-block;
+  padding:14px 10px;
+  font-size:15px;;
+  cursor:pointer;
+  transition:background .2s;
+  -webkit-transition:background .2s;
+  width: 19%;
+  text-align:center;
+}
+
+
+
+.tab{
+  min-height:200px;
+  background:$color7;
+  display:none;
+  padding:12px;
+  color:$color2;
+}
+
+#toggle-tab1:checked ~ label[for="toggle-tab1"],#toggle-tab2:checked ~ label[for="toggle-tab2"],#toggle-tab3:checked ~ label[for="toggle-tab3"],#toggle-tab4:checked ~ label[for="toggle-tab4"],#toggle-tab5:checked ~ label[for="toggle-tab5"] {
+  background:$color7;
+  margin-bottom:0;
+  border-bottom-left-radius:0;
+  border-bottom-right-radius:0;
+  padding-bottom:18px;
+  color:$color4;
+  cursor:default;
+}
+
+#toggle-tab1:checked ~ #tab1,#toggle-tab2:checked ~ #tab2,#toggle-tab3:checked ~ #tab3,#toggle-tab4:checked ~ #tab4,#toggle-tab5:checked ~ #tab5{
+  display:block;
+}
+
+
+.tabs input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+.tabs input[type="radio"]:checked + label {
+    background: $color7;
+    color: $color4;
+}
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+
+
+
