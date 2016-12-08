@@ -41,13 +41,25 @@ class SampleGrid extends Component {
       }
     };
     this.paging = this.paging.bind(this);
+    this.onBasicGridChange = this.onBasicGridChange.bind(this);
   }
 
   paging() {
     this.setState({loading: true});
     setTimeout(() => {
       this.setState({loading: false})
+      alert("Loading finish");
     }, 50000);
+  }
+
+  onBasicGridChange(event) {
+    try{
+        this.setState({basicGrid: JSON.parse(event.target.value)})
+    }catch(e){
+        console.log('error parsing json');
+        console.dir(e);
+    }    
+    
   }
 
   render() {
@@ -191,6 +203,7 @@ class SampleGrid extends Component {
     return (
       <div>
         <h2>Basic grid</h2>
+        <textarea style={{height: 100, width: '95%', padding: 10, margin:10}} value={JSON.stringify(this.state.basicGrid)} onChange={this.onBasicGridChange} />
         <Grid
           metadata={this.state.basicGrid.metadata}
           data={this.state.basicGrid.data}

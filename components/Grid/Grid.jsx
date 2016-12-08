@@ -25,7 +25,7 @@ class Grid extends Component {
           return 1;
         return 0;
       });
-    } else if {
+    } else {
       sortedData = this.state.data.sort((a, b) => {
         if (a[field] > b[field])
           return -1;
