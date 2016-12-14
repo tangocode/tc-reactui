@@ -1,5 +1,5 @@
 {
-  "name": "react-es6-webpack-boilerplate",
+  "name": "tcReactUI",
   "version": "4.0.0",
   "description": "Boilerplate for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
   "main": "index.js",
