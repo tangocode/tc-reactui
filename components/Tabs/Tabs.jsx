@@ -16,8 +16,6 @@ class Tabs extends React.Component {
 
   }
 
-
-
   generateContent() {
     const style = Object.assign({}, this.props.style);
     const className = this.props.className ? ['tabs', ...props.className] : ['tabs'];
@@ -60,12 +58,7 @@ class Tabs extends React.Component {
     return content
   }
 
-
-
-
   tabClicked(currentTabID) {
-    // console.log(currentTabID)
-
     let lastID = this.state.currentTabID;
     let currentID = currentTabID;
 
@@ -74,8 +67,6 @@ class Tabs extends React.Component {
       lastTabID: lastID
     });
   }
-
-
 
   render() {
     return (
