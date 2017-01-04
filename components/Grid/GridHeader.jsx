@@ -1,12 +1,12 @@
 import React from 'react';
-import GridColumn from './GridColumn.jsx';
+import GridColumnHeader from './GridColumnHeader.jsx';
 
 const GridHeader = (
   props
 ) => {
   /* Custom Styling config - Start */
 
-  const className = props.className ? ['grid-header', ...props.className] : ['grid-header'];
+  const className = props.className ? ['col-lg-12 client-list', ...props.className] : ['col-lg-12 client-list'];
   const style = Object.assign({}, props.style);
 
   /* Custom Styling config - End */
@@ -45,7 +45,7 @@ const GridHeader = (
           }
 
           return (
-            <GridColumn column={column} className={columnClassName} style={columnStyle} title={column.title}/>
+            <GridColumnHeader column={column} className={columnClassName} style={columnStyle} field={column.field} title={column.title} ascending={column.ascending} onSorting={props.onSorting}/>
           );
         })}
       </div>
@@ -61,7 +61,8 @@ const GridHeader = (
 GridHeader.propTypes = {
   className: React.PropTypes.array,
   style: React.PropTypes.object,
-  columns: React.PropTypes.array
+  columns: React.PropTypes.array,
+  onSorting: React.PropTypes.func
 };
 
 export default GridHeader;

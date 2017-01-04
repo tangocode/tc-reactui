@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class GridItem extends Component {
+class GridLinkItem extends Component {
   render() {
 
     /* Custom Styling config - Start */
 
-    let className = this.props.className ? [...this.props.className] : [];
+    let className = this.props.className ? ['single', ...this.props.className] : ['single'];
     let style = Object.assign({}, {}, this.props.style);
 
     /* Custom Styling config - End */
@@ -31,7 +31,7 @@ class GridItem extends Component {
   }
 }
 
-GridItem.propTypes = {
+GridLinkItem.propTypes = {
   item: React.PropTypes.object,
   className: React.PropTypes.array,
   style: React.PropTypes.object,
@@ -39,4 +39,4 @@ GridItem.propTypes = {
   onClick: React.PropTypes.func,
 };
 
-export default GridItem;
+export default GridLinkItem;

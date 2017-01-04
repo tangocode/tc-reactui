@@ -1,0 +1,205 @@
+.dropdown {
+  position: relative;
+  width: 40px;
+}
+.dropdown-text, .dropdown-text2, .dropdown-text3 {
+  cursor: pointer;
+  position: absolute;
+}
+.dropdown-text:after, .dropdown-text2:after, .dropdown-text3:after {
+  position: absolute;
+  right: 0px;
+  top: 15px;
+  content: '';
+  width: 0px;
+  height: 0px;
+}
+.dropdown-text, .dropdown-text2, .dropdown-text3,
+.dropdown-content2 a , .dropdown-content3 a ,.dropdown-content a {
+  color: $color2;
+}
+.dropdown-toggle, .dropdown-toggle2 {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  border: none;
+  background: transparent;
+  text-indent: -10px;
+  height: 34px;
+  width: 100%;
+}
+.dropdown-toggle:focus, , .dropdown-toggle3:focus {
+  outline: 0;
+}
+.dropdown-content {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 32px;
+  left:-250px;
+  padding: 10px;
+  margin: 0;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  background-color: $color7;
+  border: 1px solid #ccc;
+  width: 340px;
+  z-index: 1;
+  li span{
+    font-size: 11px; 
+  }
+}
+
+.dropdown-content a, .dropdown-content2 a, .dropdown-content3 a {
+  display: block;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text, .dropdown-toggle2:focus ~ .dropdown-text2, .dropdown-toggle3:focus ~ .dropdown-text3{
+  z-index: 2;
+}
+
+.dropdown-content:active,
+.dropdown-content:hover,
+.dropdown-toggle:focus ~ .dropdown-content,
+.dropdown-content2:active,
+.dropdown-content2:hover,
+.dropdown-toggle2:focus ~ .dropdown-content2,
+.dropdown-content3:active,
+.dropdown-content3:hover,
+.dropdown-toggle3:focus ~ .dropdown-content3 {
+  opacity: 1;
+  visibility:visible;
+  top: 40px;
+}
+.dropdown2 {
+    position: relative;
+    width: 40px;
+    margin: 0 0 0 97%;
+  }
+.dropdown-content2 {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 12px;
+  left:-200px;
+  padding: 5px;
+  margin: -10px;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  background-color: $color7;
+  border: 1px solid #ccc;
+  width: 224px;
+  z-index: 1;
+}
+.dropdown-toggle2 {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  border: none;
+  background: transparent;
+  text-indent: -10px;
+  height: 34px;
+  width: 100%;
+}
+.txt-add{
+  background-color:$color6;
+  padding: 5px;
+  width: 50%; 
+  &:focus{
+    outline: 0;
+  }
+}
+.dropdown-content2 input[type="submit"] {
+  width: 70px;
+  height: 30px;
+  margin-top:0px;
+}
+.dropdown-content2 input[type="submit"]:hover {
+  background: #408fa3;
+}
+
+
+
+.dropdown-toggle3 {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  // top: -16px;
+  top: 0px;
+  left: -10px;
+  border: none;
+  background: transparent;
+  text-indent: -10px;
+  height: 24px;
+  width: 100%;
+}
+
+.dropdown3 {
+    position: relative;
+    width: 30px;
+    margin: 0 0 0 50%;
+  }
+.dropdown-content3 {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 5px;
+  left:-140px;
+  padding: 5px;
+  margin: -30px;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  background-color: $color1;
+  border: 1px solid #ccc;
+  width: 170px;
+}
+.dropdown-content3 input[type="submit"] {
+  width: 70px;
+  height: 30px;
+  margin-top:0px;
+}
+.dropdown-content3 input[type="submit"]:hover {
+  background: #408fa3;
+}
+.dropdown-content3 input[type="reset"] {
+  width: 70px;
+  height: 30px;
+  margin-top:0px;
+}
+.dropdown-content3 input[type="reset"]:hover {
+  background: #408fa3;
+}
+
+
+input[type="reset"] {
+  background: $color4;
+  border: 0;
+  width: 200px;
+  height: 40px;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  margin-top:40px;
+}

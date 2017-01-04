@@ -4,7 +4,7 @@ import GridItem from './GridItem.jsx';
 const GridRow = (
   props
 ) => {
-  const className = props.className ? ['grid-row', ...props.className] : ['grid-row'];
+  const className = props.className ? ['col-lg-12 list', ...props.className] : ['col-lg-12 list'];
   const style = Object.assign({}, {}, props.style);
 
   let content = (
@@ -58,7 +58,7 @@ const GridRow = (
           }
 
           return (
-            <GridItem item={props.item[column.field]} value={value} className={itemClassName} style={itemStyle} />
+            <GridItem item={props.item} value={value} className={itemClassName} style={itemStyle} />
           );
         })}
       </div>
