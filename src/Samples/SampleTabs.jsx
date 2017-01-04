@@ -16,7 +16,7 @@ const SampleTabs = () => {
   };
 
 
-  const classNames = ['fuck-off'];
+  const classNames = [];
   // classNames will be property of component that can override a default style
 
   const style = []
