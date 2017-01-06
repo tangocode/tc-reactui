@@ -8,35 +8,21 @@ const SampleTabs = () => {
 
   const basicTabs = {
     metadata: [
-      { tabID: '1', label: 'Information'},
-      { tabID: '2', label: 'Scheduling'},
-      { tabID: '3', label: 'Integrations'},
-      { tabID: '4', label: 'Activity'}
+      { tabID: 'information', label: 'Information', tabIndex: 1},
+      { tabID: 'scheduling', label: 'Scheduling', tabIndex: 2},
+      { tabID: 'integrations', label: 'Integrations', tabIndex: 3},
+      { tabID: 'activity', label: 'Activity', tabIndex: 4}
     ]
   };
 
 
-  const classNames = [];
-  // classNames will be property of component that can override a default style
-
+  const classNames = []; // classNames will be property of component that can override a default style
   const style = []
-
-  // renderTab(id) {
-
-  //   if id = 1
-  //     return jsx1
-  //   if id = 2
-
-
-  // }
 
   return (
     <div>
       <Tabs
         metadata={basicTabs.metadata}
-        //
-        // className kxzckm;cz
-        // callback retrun id
       />
     </div>
   );

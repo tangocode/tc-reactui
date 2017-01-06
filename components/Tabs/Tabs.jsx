@@ -6,14 +6,9 @@ class Tabs extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-
-          currentTabID: 1,
-          lastTabID: 1,
+          currentTabIndex: 1,
+          lastTabIndex: 1,
       };
-  }
-
-  componentDidMount() {
-
   }
 
   generateContent() {
@@ -42,7 +37,7 @@ class Tabs extends React.Component {
         <div className={className} style={style}>
 
           {cells.map(cell => {
-            if(cell.tabID == this.state.currentTabID) {var cellClassName = ['highlightedTab']}
+            if(cell.tabIndex == this.state.currentTabIndex) {var cellClassName = ['highlightedTab']}
             else {var cellClassName = ['']}
             return (
               <TabsCell
@@ -58,13 +53,16 @@ class Tabs extends React.Component {
     return content
   }
 
-  tabClicked(currentTabID) {
-    let lastID = this.state.currentTabID;
-    let currentID = currentTabID;
+  tabClicked(currentTabIndex) {
+    
+    this.props.tabClicked(currentTabIndex);
+
+    let lastIndex = this.state.currentTabIndex;
+    let currentIndex = currentTabIndex;
 
     this.setState({
-      currentTabID: currentID,
-      lastTabID: lastID
+      currentTabIndex: currentIndex,
+      lastTabIndex: lastIndex
     });
   }
 
@@ -77,11 +75,5 @@ class Tabs extends React.Component {
   }
 
 };
-
-// Tabs.propTypes = {
-//   className: React.PropTypes.array,
-//   style: React.PropTypes.object,
-//   cells: React.PropTypes.array,
-// };
 
 export default Tabs;
