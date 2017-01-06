@@ -2,10 +2,6 @@ import React from 'react';
 
 class TabsCell extends React.Component {
 
-  componentDidMount() {
-    // debugger
-  }
-
   generateContent() {
     let className = this.props.className ? ['tabs-cell', ...this.props.className] : ['tabs-cell'];
     let style = Object.assign({}, this.props.style);
@@ -19,7 +15,7 @@ class TabsCell extends React.Component {
     );
     if (!this.props.children) {
       content = (
-        <div className={className.join(' ')}  style={style} onClick={this.props.tabClicked.bind(this, this.props.cell.tabID)}>
+        <div className={className.join(' ')}  style={style} onClick={this.props.tabClicked.bind(this, this.props.cell.tabIndex)}>
           <span>{this.props.cell.label}</span>
         </div>
       );
