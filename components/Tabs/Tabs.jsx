@@ -6,8 +6,8 @@ class Tabs extends React.Component {
   constructor(props) {
       super(props);
       this.state = {
-          currentTabIndex: 1,
-          lastTabIndex: 1,
+          currentTabIndex: 0,
+          lastTabIndex: 0,
       };
   }
 
