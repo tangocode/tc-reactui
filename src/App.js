@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import SampleGridOnClick from './Samples/SampleGridOnClick.jsx';
 import SampleTabs from './Samples/SampleTabs.jsx';
 
 export default class App extends Component {
@@ -6,7 +7,7 @@ export default class App extends Component {
     return (
       // Add your component markup and other subcomponent references here.
       <div>
-        <SampleTabs />
+        <SampleGridOnClick />
       </div>
     );
   }

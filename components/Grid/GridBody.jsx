@@ -1,66 +1,89 @@
-import React from 'react';
+import React, { Component } from 'react';
 import GridRow from './GridRow.jsx';
 
-const GridBody = (
-  props
-) => {
-  /* Custom Styling config - Start */
+class GridBody extends Component {
 
-  const className = props.className ? [...props.className] : [];
-  const style = Object.assign({}, props.style);
+  rowClickListener(rowData) {
+    this.props.rowClickListener(rowData)
+  }
 
-  /* Custom Styling config - End */
+  generateContent() {
 
-  /* Custom Content config - Start */
+    console.log(this.props)
+    /* Custom Styling config - Start */
 
-  // Set children as content
-  let content = (
-    <div className={className} style={style}>
-      {props.children}
-    </div>
-  );
+    const className = this.props.className ? [...this.props.className] : [];
+    const style = Object.assign({}, this.props.style);
 
-  // If not children then use default content
-  if (!props.children) {
-    if (!props.columns) {
-      throw 'Property \'columns\' is required if no children are defined for the \'Grid\' component';
-    }
-    if (!props.data) {
-      throw 'Property \'data\' is required if no children are defined for the \'Grid\' component';
-    }
-    const columns = props.columns ? props.columns : [];
-    const rows = props.rows ? props.rows : [];
-    const cells = props.cells ? props.cells : [];
-    const data = props.data ? props.data : [];
-    content = (
+    /* Custom Styling config - End */
+
+    /* Custom Content config - Start */
+
+    // Set children as content
+    let content = (
       <div className={className} style={style}>
-        {data.map(item => {
-          let rowClassName = props.rowClassName ? props.rowClassName : [];
-          let rowStyle = Object.assign({}, props.rowStyle);
-          if (item.rowDefinition) {
-            const rowDefinition = rows.find(r => r.id === item.rowDefinition);
-            if (rowDefinition) {
-              if (rowDefinition.className) {
-                rowClassName = [...rowClassName, ...rowDefinition.className];
-              }
-              if (rowDefinition.style) {
-                rowStyle = Object.assign({}, rowStyle, rowDefinition.style);
+        {this.props.children}
+      </div>
+    );
+
+    // If not children then use default content
+    if (!this.props.children) {
+      if (!this.props.columns) {
+        throw 'Property \'columns\' is required if no children are defined for the \'Grid\' component';
+      }
+      if (!this.props.data) {
+        throw 'Property \'data\' is required if no children are defined for the \'Grid\' component';
+      }
+      const columns = this.props.columns ? this.props.columns : [];
+      const rows = this.props.rows ? this.props.rows : [];
+      const cells = this.props.cells ? this.props.cells : [];
+      const data = this.props.data ? this.props.data : [];
+
+      content = (
+        <div className={className} style={style}>
+          {data.map(item => {
+            let rowClassName = this.props.rowClassName ? this.props.rowClassName : [];
+            let rowStyle = Object.assign({}, this.props.rowStyle);
+            if (item.rowDefinition) {
+              const rowDefinition = rows.find(r => r.id === item.rowDefinition);
+              if (rowDefinition) {
+                if (rowDefinition.className) {
+                  rowClassName = [...rowClassName, ...rowDefinition.className];
+                }
+                if (rowDefinition.style) {
+                  rowStyle = Object.assign({}, rowStyle, rowDefinition.style);
+                }
               }
             }
-          }
+            return (
+              <GridRow 
+                className={rowClassName} 
+                style={rowStyle} 
+                item={item} 
+                columns={columns} 
+                cells={cells} 
+                rowClickListener = {this.rowClickListener.bind(this)}
+              />
+            );
+          })}
+        </div>
+      );
+    }
 
-          return (
-            <GridRow className={rowClassName} style={rowStyle} item={item} columns={columns} cells={cells} />
-          );
-        })}
+    /* Custom Content config - End */
+
+    // Render content
+    return content;
+  }
+
+
+  render() {
+    return (
+      <div>
+        {this.generateContent()}
       </div>
     );
   }
-
-  /* Custom Content config - End */
-
-  // Render content
-  return content;
 };
 
 GridBody.propTypes = {
@@ -71,7 +94,8 @@ GridBody.propTypes = {
   columns: React.PropTypes.array,
   rows: React.PropTypes.array,
   cells: React.PropTypes.array,
-  data: React.PropTypes.array
+  data: React.PropTypes.array,
+  rowClickListener: React.PropTypes.func
 };
 
 export default GridBody;

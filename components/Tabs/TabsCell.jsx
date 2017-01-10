@@ -15,7 +15,7 @@ class TabsCell extends React.Component {
     );
     if (!this.props.children) {
       content = (
-        <div className={className.join(' ')}  style={style} onClick={this.props.tabClicked.bind(this, this.props.cell.tabIndex)}>
+        <div className={className.join(' ')}  style={style} onClick={ () => { this.props.tabClicked(this.props.cell.tabIndex); }}>
           <span>{this.props.cell.label}</span>
         </div>
       );
