@@ -13,6 +13,7 @@ class Grid extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.handleDivScroll = this.handleDivScroll.bind(this);
     this.containerDidMount = this.containerDidMount.bind(this);
+    this.rowClickListener = this.rowClickListener.bind(this);
   }
 
   sortLocal(field, ascending) {
@@ -55,6 +56,10 @@ class Grid extends Component {
       this.props.onPaging();
     }
   }  
+
+  rowClickListener(rowData) {
+    this.props.rowClickListener ? this.props.rowClickListener(rowData) : null;
+  }
 
   componentDidMount() {
     if (!this.props.height) {
@@ -153,7 +158,7 @@ class Grid extends Component {
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />
-          <GridBody className={this.props.bodyClassName} style={this.props.bodyStyle} rowClassName={this.props.rowClassName} rowStyle={this.props.rowStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} />
+          <GridBody className={this.props.bodyClassName} style={this.props.bodyStyle} rowClassName={this.props.rowClassName} rowStyle={this.props.rowStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
           {loading}
         </div>
       );
@@ -187,7 +192,8 @@ Grid.propTypes = {
   showLoading: React.PropTypes.bool,
   loadingText: React.PropTypes.bool,
   loadingStyle: React.PropTypes.bool,
-  loadingClassName: React.PropTypes.bool
+  loadingClassName: React.PropTypes.bool,
+  rowClickListener: React.PropTypes.func
 };
 
 export default Grid;
