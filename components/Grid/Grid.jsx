@@ -13,6 +13,7 @@ class Grid extends Component {
     this.handleScroll = this.handleScroll.bind(this);
     this.handleDivScroll = this.handleDivScroll.bind(this);
     this.containerDidMount = this.containerDidMount.bind(this);
+    this.rowClickListener = this.rowClickListener.bind(this);
   }
 
   sortLocal(field, ascending) {
@@ -57,7 +58,7 @@ class Grid extends Component {
   }  
 
   rowClickListener(rowData) {
-    this.props.rowClickListener?this.props.rowClickListener(rowData):null;
+    this.props.rowClickListener ? this.props.rowClickListener(rowData) : null;
   }
 
   componentDidMount() {
@@ -157,7 +158,7 @@ class Grid extends Component {
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />
-          <GridBody className={this.props.bodyClassName} style={this.props.bodyStyle} rowClassName={this.props.rowClassName} rowStyle={this.props.rowStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener.bind(this)}/>
+          <GridBody className={this.props.bodyClassName} style={this.props.bodyStyle} rowClassName={this.props.rowClassName} rowStyle={this.props.rowStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
           {loading}
         </div>
       );

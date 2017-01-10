@@ -3,13 +3,17 @@ import GridRow from './GridRow.jsx';
 
 class GridBody extends Component {
 
+  constructor(props) {
+    super(props)
+    this.rowClickListener = this.rowClickListener.bind(this);
+  }
+
   rowClickListener(rowData) {
     this.props.rowClickListener(rowData)
   }
 
-  generateContent() {
+  render() {
 
-    console.log(this.props)
     /* Custom Styling config - Start */
 
     const className = this.props.className ? [...this.props.className] : [];
@@ -62,7 +66,7 @@ class GridBody extends Component {
                 item={item} 
                 columns={columns} 
                 cells={cells} 
-                rowClickListener = {this.rowClickListener.bind(this)}
+                rowClickListener = {this.rowClickListener}
               />
             );
           })}
@@ -70,17 +74,9 @@ class GridBody extends Component {
       );
     }
 
-    /* Custom Content config - End */
-
-    // Render content
-    return content;
-  }
-
-
-  render() {
     return (
       <div>
-        {this.generateContent()}
+        {content}
       </div>
     );
   }

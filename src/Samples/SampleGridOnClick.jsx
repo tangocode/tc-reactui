@@ -16,6 +16,7 @@ class SampleGridOnClick extends Component {
     };
     this.paging = this.paging.bind(this);
     this.onBasicGridChange = this.onBasicGridChange.bind(this);
+    this.rowClickListener = this.rowClickListener.bind(this);
   }
 
   rowClickListener(rowData) {
@@ -59,7 +60,7 @@ class SampleGridOnClick extends Component {
         <Grid
           metadata={sortingGrid.metadata}
           data={sortingGrid.data}
-          // rowClickListener={this.rowClickListener.bind(this)}
+          rowClickListener={this.rowClickListener}
         />
   
       </div>
