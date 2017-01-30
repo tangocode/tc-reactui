@@ -20,22 +20,22 @@ class Grid extends Component {
     let sortedData;
     if (ascending) {
       sortedData = this.state.data.sort((a, b) => {
-        if (a[field] < b[field])
-          return -1;
-        if (a[field] > b[field])
-          return 1;
+        const aFormatted = a[field].value ? a[field].value.toUpperCase().trim() : a[field].toUpperCase().trim()
+        const bFormatted = b[field].value ? b[field].value.toUpperCase().trim() : b[field].toUpperCase().trim()
+        if (aFormatted < bFormatted) return -1;
+        if (aFormatted > bFormatted) return 1;
         return 0;
       });
     } else {
       sortedData = this.state.data.sort((a, b) => {
-        if (a[field] > b[field])
-          return -1;
-        if (a[field] < b[field])
-          return 1;
+        const aFormatted = a[field].value ? a[field].value.toUpperCase().trim() : a[field].toUpperCase().trim()
+        const bFormatted = b[field].value ? b[field].value.toUpperCase().trim() : b[field].toUpperCase().trim()
+        if (aFormatted > bFormatted) return -1;
+        if (aFormatted < bFormatted) return 1;
         return 0;
       });
     }
-    this.setState({data: sortedData});
+    this.setState({ data: sortedData });
   }
 
   handleScroll() {
@@ -55,7 +55,7 @@ class Grid extends Component {
     if (this.props.onPaging && this.container.scrollTop + 300 >= this.container.scrollHeight) {
       this.props.onPaging();
     }
-  }  
+  }
 
   rowClickListener(rowData) {
     this.props.rowClickListener ? this.props.rowClickListener(rowData) : null;
@@ -63,14 +63,14 @@ class Grid extends Component {
 
   componentDidMount() {
     if (!this.props.height) {
-      window.addEventListener("scroll", this.handleScroll);  
-    }    
+      window.addEventListener("scroll", this.handleScroll);
+    }
   }
 
   componentWillUnmount() {
     if (!this.props.height) {
       window.removeEventListener("scroll", this.handleScroll);
-    }    
+    }
   }
 
   containerDidMount(container) {
@@ -86,12 +86,12 @@ class Grid extends Component {
     if (nextProps.data) {
       this.setState({
         data: nextProps.data
-      });      
-    } 
+      });
+    }
     if (nextProps.showLoading !== undefined) {
       this.setState({
         showLoading: nextProps.showLoading
-      });      
+      });
     }
   }
 
@@ -104,7 +104,7 @@ class Grid extends Component {
       style = Object.assign({}, style, {
         height: '300',
         overflowY: 'scroll'
-      });      
+      });
     }
 
     /* Custom Styling config - End */

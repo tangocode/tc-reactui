@@ -26,6 +26,7 @@ class GridColumnHeader extends GridItem {
 
     let content = (
       <div className={className} style={style} onClick={this.props.onClick}>
+        <h1>1</h1>
         {this.props.children}
       </div>
     );
@@ -39,7 +40,7 @@ class GridColumnHeader extends GridItem {
 
       content = (
         <div className={className} style={style}>
-          <h2 onClick={this.props.onClick}>{this.props.title}{sort}</h2>
+          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={{cursor: 'pointer'}} onClick={this.sorting}>{this.props.title}&nbsp;{sort}</span></h2>
         </div>
       );
     }
