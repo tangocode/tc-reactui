@@ -40,7 +40,7 @@ class GridColumnHeader extends GridItem {
 
       content = (
         <div className={className} style={style}>
-          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={{cursor: 'pointer'}} onClick={this.sorting}>{this.props.title}&nbsp;{sort}</span></h2>
+          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={{cursor: 'pointer', userSelect: 'none'}} onClick={this.sorting}>{this.props.title}&nbsp;{sort}</span></h2>
         </div>
       );
     }
