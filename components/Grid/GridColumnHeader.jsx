@@ -26,20 +26,21 @@ class GridColumnHeader extends GridItem {
 
     let content = (
       <div className={className} style={style} onClick={this.props.onClick}>
+        <h1>1</h1>
         {this.props.children}
       </div>
     );
     if (!this.props.children) {
-      let sort = (<span />);
-      if (this.props.ascending !== undefined && this.props.onSorting) {
-        sort = (
-          <span className={this.state.ascending ? 'fa fa-caret-up' : 'fa fa-caret-down'} onClick={this.sorting}/>
-        );
+      let sort = (this.props.ascending !== undefined && this.props.onSorting) ? (
+        <span className={this.state.ascending ? 'fa fa-caret-up' : 'fa fa-caret-down'} onClick={this.sorting}/>
+      ) : null
+      const clickableStyle = {
+        cursor: sort ? "pointer" : 'default',
+        userSelect: "none"
       }
-
       content = (
         <div className={className} style={style}>
-          <h2 onClick={this.props.onClick}>{this.props.title}{sort}</h2>
+          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={clickableStyle} onClick={this.sorting}>{this.props.title}&nbsp;{sort}</span></h2>
         </div>
       );
     }

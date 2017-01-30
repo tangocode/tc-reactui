@@ -15,22 +15,23 @@ class SampleGrid extends Component {
       loading: false,
       basicGrid: {
         metadata: [
-          { field: 'name', title: 'Name'},
-          { field: 'description', title: 'Description'}
+          { field: 'name', title: 'Name', ascending: true},
+          { field: 'description', title: 'Description', ascending: false}
         ],
         data: [
-          { name: 'Daniel', description: 'Developer'},
+          { name: 'Daniel', description: 'developer'},
           { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'Developer'},
-          { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'Developer'},
-          { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'Developer'},
-          { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'Developer'},
-          { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'Developer'},
-          { name: 'Tom', description: 'Developer' },
+          { name: 'Daniel', description: 'ceveloper'},
+          { name: 'Tom', description: 'Ceveloper' },
+          { name: 'Daniel', description: 'Zeveloper'},
+          { name: {value: 'IS THIS THE PROBLEM?'}, description: 'zeveloper'},
+          { name: {value: 'Tom'}, description: 'teveloper' },
+          { name: 'daniel', description: 'Teveloper'},
+          { name: 'tom', description: 'Developer' },
+          { name: '  NATHANIEL', description: 'Developer'},
+          { name: 'Tom ', description: 'Developer' },
+          { name: ' r aniel ', description: 'Developer'},
+          { name: ' ', description: 'Developer' },
           { name: 'Daniel', description: 'Developer'},
           { name: 'Tom', description: 'Developer' },
           { name: 'Daniel', description: 'Developer'},
@@ -58,8 +59,8 @@ class SampleGrid extends Component {
     }catch(e){
         console.log('error parsing json');
         console.dir(e);
-    }    
-    
+    }
+
   }
 
   render() {
@@ -72,7 +73,7 @@ class SampleGrid extends Component {
         { name: 'Daniel', description: 'Developer'},
         { name: 'Tom', description: 'Developer' }
       ]
-    };  
+    };
 
     const customRowStyle = {
       metadata: {
@@ -203,7 +204,7 @@ class SampleGrid extends Component {
     return (
       <div>
         <h2>Basic grid</h2>
-        <textarea style={{height: 100, width: '95%', padding: 10, margin:10}} value={JSON.stringify(this.state.basicGrid)} onChange={this.onBasicGridChange} />
+        {/* <textarea style={{height: 100, width: '95%', padding: 10, margin:10}} value={JSON.stringify(this.state.basicGrid)} onChange={this.onBasicGridChange} /> */}
         <Grid
           metadata={this.state.basicGrid.metadata}
           data={this.state.basicGrid.data}
@@ -214,8 +215,10 @@ class SampleGrid extends Component {
 
         <h2>Basic grid with sorting</h2>
         <Grid
-          metadata={sortingGrid.metadata}
-          data={sortingGrid.data}
+          metadata={this.state.basicGrid.metadata}
+          data={this.state.basicGrid.data}
+          // metadata={sortingGrid.metadata}
+          // data={sortingGrid.data}
         />
 
         <h2>Custom row style</h2>
@@ -282,7 +285,7 @@ class SampleGrid extends Component {
            <GridLinkItem style={{width: '30%'}} value='Other' onClick={() => alert('clicked')} />
            <GridImageItem style={{width: '70%'}} image='moran-logo.png' onClick={() => alert('clicked')} />
           </GridRow>
-        </Grid>       
+        </Grid>
       </div>
     );
   }
