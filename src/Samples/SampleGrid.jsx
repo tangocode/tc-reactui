@@ -24,7 +24,11 @@ class SampleGrid extends Component {
           { name: 'Daniel', description: 'ceveloper'},
           { name: 'Tom', description: 'Ceveloper' },
           { name: 'Daniel', description: 'Zeveloper'},
-          { name: {value: 'IS THIS THE PROBLEM?'}, description: 'zeveloper'},
+          { name: {
+            value: 'http://img04.deviantart.net/eda8/i/2015/339/9/0/random_logo_by_madmindbreaker-d9j20em.png',
+            type: 'image',
+            imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
+          }, description: 'zeveloper'},
           { name: {value: 'Tom'}, description: 'teveloper' },
           { name: 'daniel', description: 'Teveloper'},
           { name: 'tom', description: 'Developer' },
