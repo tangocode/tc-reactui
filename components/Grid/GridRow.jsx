@@ -26,7 +26,9 @@ class GridRow extends Component {
         <div className={className} style={style} onClick={ () => { this.props.rowClickListener(this.props.item) }}>
           {columns.map(column => {
             // By default asign the field as value
-            let value = this.props.item[column.field];
+            let value = this.props.item[column.field].value ? this.props.item[column.field].value : this.props.item[column.field];
+            let type = this.props.item[column.field].type ? this.props.item[column.field].type : 'text'
+            let imgStyle = this.props.item[column.field].imgStyle ? { ...this.props.item[column.field].imgStyle } : null
 
             // Merge with column row definition
             let itemClassName = [];
@@ -62,7 +64,7 @@ class GridRow extends Component {
             }
 
             return (
-              <GridItem item={this.props.item} value={value} className={itemClassName} style={itemStyle} />
+              <GridItem item={this.props.item} value={value} className={itemClassName} style={itemStyle} type={type} imgStyle={imgStyle} />
             );
           })}
         </div>
@@ -80,6 +82,7 @@ class GridRow extends Component {
 GridRow.propTypes = {
   className: React.PropTypes.array,
   style: React.PropTypes.object,
+  imgStyle: React.PropTypes.object,
   columns: React.PropTypes.array,
   rowClickListener: React.PropTypes.func
 };

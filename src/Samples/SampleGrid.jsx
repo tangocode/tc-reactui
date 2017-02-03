@@ -24,7 +24,12 @@ class SampleGrid extends Component {
           { name: 'Daniel', description: 'ceveloper'},
           { name: 'Tom', description: 'Ceveloper' },
           { name: 'Daniel', description: 'Zeveloper'},
-          { name: {value: 'IS THIS THE PROBLEM?'}, description: 'zeveloper'},
+          // Image example
+          { name: {
+            value: '',
+            type: 'image',
+            imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
+          }, description: 'zeveloper'},
           { name: {value: 'Tom'}, description: 'teveloper' },
           { name: 'daniel', description: 'Teveloper'},
           { name: 'tom', description: 'Developer' },
