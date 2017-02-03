@@ -26,7 +26,6 @@ class GridRow extends Component {
         <div className={className} style={style} onClick={ () => { this.props.rowClickListener(this.props.item) }}>
           {columns.map(column => {
             // By default asign the field as value
-            console.log('will item field column', this.props.item[column.field]);
             let value = this.props.item[column.field].value ? this.props.item[column.field].value : this.props.item[column.field];
             let type = this.props.item[column.field].type ? this.props.item[column.field].type : 'text'
             let imgStyle = this.props.item[column.field].imgStyle ? { ...this.props.item[column.field].imgStyle } : null

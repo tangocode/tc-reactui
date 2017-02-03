@@ -24,8 +24,9 @@ class SampleGrid extends Component {
           { name: 'Daniel', description: 'ceveloper'},
           { name: 'Tom', description: 'Ceveloper' },
           { name: 'Daniel', description: 'Zeveloper'},
+          // Image example
           { name: {
-            value: 'http://img04.deviantart.net/eda8/i/2015/339/9/0/random_logo_by_madmindbreaker-d9j20em.png',
+            value: '',
             type: 'image',
             imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
           }, description: 'zeveloper'},
