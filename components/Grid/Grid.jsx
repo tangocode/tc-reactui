@@ -20,24 +20,24 @@ class Grid extends Component {
     let sortedData;
     if (ascending) {
       sortedData = this.state.data.sort((a, b) => {
-        const aFormatted = a[field].value ? a[field].value.toUpperCase().trim() : a[field].toUpperCase().trim()
-        const bFormatted = b[field].value ? b[field].value.toUpperCase().trim() : b[field].toUpperCase().trim()
-        if (aFormatted < bFormatted) return -1;
-        if (aFormatted > bFormatted) return 1;
+      if (b[field] && (!a[field] || a[field] < b[field]))
+        return -1;
+      if (a[field] && (!b[field] || a[field] > b[field]))
+        return 1;
         return 0;
       });
     } else {
       sortedData = this.state.data.sort((a, b) => {
-        const aFormatted = a[field].value ? a[field].value.toUpperCase().trim() : a[field].toUpperCase().trim()
-        const bFormatted = b[field].value ? b[field].value.toUpperCase().trim() : b[field].toUpperCase().trim()
-        if (aFormatted > bFormatted) return -1;
-        if (aFormatted < bFormatted) return 1;
+      if (a[field] && (!b[field] || a[field] > b[field]))
+        return -1;
+      if (b[field] && (!a[field] || a[field] < b[field]))
+        return 1;
         return 0;
       });
     }
-    this.setState({ data: sortedData });
+    this.setState({data: sortedData});
   }
-
+  
   handleScroll() {
     if (this.props.onPaging) {
       const windowHeight = "innerHeight" in window ? window.innerHeight : document.documentElement.offsetHeight;
