@@ -20,17 +20,37 @@ class Grid extends Component {
     let sortedData;
     if (ascending) {
       sortedData = this.state.data.sort((a, b) => {
-      if (b[field] && (!a[field] || a[field] < b[field]))
+        let aField;
+        let bField;
+        typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
+        typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
+
+        aField = aField ? aField : ''
+        bField = bField ? bField : ''
+        aField = aField.toUpperCase().trim()
+        bField = bField.toUpperCase().trim()
+
+      if (aField < bField)
         return -1;
-      if (a[field] && (!b[field] || a[field] > b[field]))
+      if (aField > bField) 
         return 1;
         return 0;
       });
     } else {
       sortedData = this.state.data.sort((a, b) => {
-      if (a[field] && (!b[field] || a[field] > b[field]))
+        let aField;
+        let bField;
+        typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
+        typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
+
+        aField = aField ? aField : ''
+        bField = bField ? bField : ''
+        aField = aField.toUpperCase().trim()
+        bField = bField.toUpperCase().trim()
+
+      if (aField > bField)
         return -1;
-      if (b[field] && (!a[field] || a[field] < b[field]))
+      if (aField < bField)
         return 1;
         return 0;
       });

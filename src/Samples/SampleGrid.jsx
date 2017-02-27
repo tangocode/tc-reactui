@@ -19,11 +19,11 @@ class SampleGrid extends Component {
           { field: 'description', title: 'Description', ascending: false}
         ],
         data: [
-          { name: 'Daniel', description: 'developer'},
-          { name: 'Tom', description: 'Developer' },
-          { name: 'Daniel', description: 'ceveloper'},
-          { name: 'Tom', description: 'Ceveloper' },
-          { name: 'Daniel', description: 'Zeveloper'},
+          { name: {value: 'Bartholomew'}, description: 'developer'},
+          { name: {value: 'Michael'}, description: 'Developer' },
+          { name: {value: 'Aaron'}, description: 'ceveloper'},
+          { name: {value: null}, description: 'RATATATAT' },
+          { name: {value: undefined}, description: 'SORT TSOOSOO'},
           // Image example
           { name: {
             value: '',
@@ -31,8 +31,8 @@ class SampleGrid extends Component {
             imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
           }, description: 'zeveloper'},
           { name: {value: 'Tom'}, description: 'teveloper' },
-          { name: 'daniel', description: 'Teveloper'},
-          { name: 'tom', description: 'Developer' },
+          { name: 'null', description: 'BLAH BALHFLSDJF'},
+          { name: 'undefined', description: 'RABABABLABALBRLB' },
           { name: '  NATHANIEL', description: 'Developer'},
           { name: 'Tom ', description: 'Developer' },
           { name: ' r aniel ', description: 'Developer'},
