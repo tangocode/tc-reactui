@@ -40,11 +40,9 @@ class Grid extends Component {
       });
     } else {
       sortedData = this.state.data.sort((a, b) => {
-        let aField;
-        let bField;
-        typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
-        typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
-
+        let aField = typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
+        let bField = typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
+        
         aField = aField ? aField : ''
         bField = bField ? bField : ''
         aField = aField.toUpperCase().trim()
