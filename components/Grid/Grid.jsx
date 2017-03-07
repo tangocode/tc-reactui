@@ -181,7 +181,7 @@ class Grid extends Component {
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />
-          <GridBody className={this.props.bodyClassName} {...this.props} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
+          <GridBody className={this.props.bodyClassName} {...this.props} style={this.props.bodyStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
           {loading}
         </div>
       );
