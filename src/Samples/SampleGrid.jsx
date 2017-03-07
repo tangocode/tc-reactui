@@ -7,6 +7,7 @@ import GridRow from './../../components/Grid/GridRow.jsx';
 import GridItem from './../../components/Grid/GridItem.jsx';
 import GridImageItem from './../../components/Grid/GridImageItem.jsx';
 import GridLinkItem from './../../components/Grid/GridLinkItem.jsx';
+import moment from 'moment';
 
 class SampleGrid extends Component {
   constructor(props) {
@@ -28,8 +29,14 @@ class SampleGrid extends Component {
           { name: {
             value: '',
             type: 'image',
-            imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
-          }, description: 'zeveloper'},
+            imgStyle: {
+              marginTop: '0px',
+              height: '35px',
+              marginLeft: '20px'
+            }
+           },
+           description: 'zeveloper',
+          },
           { name: {value: 'Tom'}, description: 'teveloper' },
           { name: 'null', description: 'BLAH BALHFLSDJF'},
           { name: 'undefined', description: 'RABABABLABALBRLB' },
