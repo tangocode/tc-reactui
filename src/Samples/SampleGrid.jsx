@@ -33,14 +33,6 @@ class SampleGrid extends Component {
               marginTop: '0px',
               height: '35px',
               marginLeft: '20px'
-            },
-            clickItemHandler(item) {
-              const prevMonth = moment([moment().year(), moment().month() - 1]);
-              console.log('prev month', prevMonth.format('YYYY-MM'));
-              const startDate = prevMonth.startOf('month').format('YYYY-MM-DD');
-              const endDate = prevMonth.endOf('month').format('YYYY-MM-DD');
-              console.log(`start date ${startDate} \nend date ${endDate}`);
-              // window.open('https://www.google.com')
             }
            },
            description: 'zeveloper',
