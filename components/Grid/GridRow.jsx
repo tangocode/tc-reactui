@@ -20,6 +20,7 @@ class GridRow extends Component {
       }
       const columns = this.props.columns ? this.props.columns : [];
       const cells = this.props.cells ? this.props.cells : [];
+      
 
       content = (
         
@@ -29,7 +30,7 @@ class GridRow extends Component {
             let value = this.props.item[column.field].value ? this.props.item[column.field].value : this.props.item[column.field];
             let type = this.props.item[column.field].type ? this.props.item[column.field].type : 'text'
             let imgStyle = this.props.item[column.field].imgStyle ? { ...this.props.item[column.field].imgStyle } : null
-
+            let itemClickHandler;
             // Merge with column row definition
             let itemClassName = [];
             let itemStyle = Object.assign({}, { width: `${100 / this.props.columns.length}%` });
@@ -52,6 +53,8 @@ class GridRow extends Component {
 
               if (this.props.item[column.field].cellDefinition) {
                 const cellDefinition = cells.find(c => c.id === this.props.item[column.field].cellDefinition);
+                itemClickHandler = this.props.itemClickHandlers.find(handler => handler.cellDefinition === cellDefinition.id)
+                console.log('cell definition click HANDLER BEOTCH', itemClickHandler);
                 if (cellDefinition) {
                   if (cellDefinition.className) {
                     itemClassName = [...itemClassName, ...cellDefinition.className];
@@ -62,9 +65,16 @@ class GridRow extends Component {
                 }
               }
             }
-
             return (
-              <GridItem item={this.props.item} value={value} className={itemClassName} style={itemStyle} type={type} imgStyle={imgStyle} />
+              <GridItem
+                item={this.props.item}
+                value={value}
+                className={itemClassName}
+                style={itemStyle}
+                type={type}
+                imgStyle={imgStyle}
+                clickItemHandler={itemClickHandler}
+              />
             );
           })}
         </div>

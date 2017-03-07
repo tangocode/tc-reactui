@@ -18,6 +18,7 @@ class GridBody extends Component {
 
     const className = this.props.className ? [...this.props.className] : [];
     const style = Object.assign({}, this.props.style);
+    console.log('this props item click handlers', this.props);
 
     /* Custom Styling config - End */
 
@@ -66,7 +67,8 @@ class GridBody extends Component {
                 item={item} 
                 columns={columns} 
                 cells={cells} 
-                rowClickListener = {this.rowClickListener}
+                rowClickListener={this.rowClickListener}
+                itemClickHandlers={this.props.itemClickHandlers}
               />
             );
           })}

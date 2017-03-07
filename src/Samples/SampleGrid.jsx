@@ -7,6 +7,7 @@ import GridRow from './../../components/Grid/GridRow.jsx';
 import GridItem from './../../components/Grid/GridItem.jsx';
 import GridImageItem from './../../components/Grid/GridImageItem.jsx';
 import GridLinkItem from './../../components/Grid/GridLinkItem.jsx';
+import moment from 'moment';
 
 class SampleGrid extends Component {
   constructor(props) {
@@ -28,8 +29,22 @@ class SampleGrid extends Component {
           { name: {
             value: '',
             type: 'image',
-            imgStyle: { marginTop: '0px', height: '35px', marginLeft: '20px' }
-          }, description: 'zeveloper'},
+            imgStyle: {
+              marginTop: '0px',
+              height: '35px',
+              marginLeft: '20px'
+            },
+            clickItemHandler(item) {
+              const prevMonth = moment([moment().year(), moment().month() - 1]);
+              console.log('prev month', prevMonth.format('YYYY-MM'));
+              const startDate = prevMonth.startOf('month').format('YYYY-MM-DD');
+              const endDate = prevMonth.endOf('month').format('YYYY-MM-DD');
+              console.log(`start date ${startDate} \nend date ${endDate}`);
+              // window.open('https://www.google.com')
+            }
+           },
+           description: 'zeveloper',
+          },
           { name: {value: 'Tom'}, description: 'teveloper' },
           { name: 'null', description: 'BLAH BALHFLSDJF'},
           { name: 'undefined', description: 'RABABABLABALBRLB' },

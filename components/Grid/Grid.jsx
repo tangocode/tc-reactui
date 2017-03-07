@@ -40,9 +40,11 @@ class Grid extends Component {
       });
     } else {
       sortedData = this.state.data.sort((a, b) => {
-        let aField = typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
-        let bField = typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
-        
+        let aField;
+        let bField;
+        typeof a[field] === 'string' ? aField = a[field] : aField = a[field].value
+        typeof b[field] === 'string' ? bField = b[field] : bField = b[field].value
+
         aField = aField ? aField : ''
         bField = bField ? bField : ''
         aField = aField.toUpperCase().trim()
@@ -119,7 +121,7 @@ class Grid extends Component {
 
   render() {
     /* Custom Styling config - Start */
-
+    console.log('grid props', this.props);
     const className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, this.props.style);
     if (this.props.height) {
@@ -180,7 +182,7 @@ class Grid extends Component {
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />
-          <GridBody className={this.props.bodyClassName} style={this.props.bodyStyle} rowClassName={this.props.rowClassName} rowStyle={this.props.rowStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
+          <GridBody className={this.props.bodyClassName} {...this.props} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
           {loading}
         </div>
       );

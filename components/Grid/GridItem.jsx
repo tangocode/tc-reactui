@@ -3,12 +3,14 @@ import React, { Component } from 'react';
 class GridItem extends Component {
   constructor(props) {
     super(props);
+    this.clickHandler = this.clickHandler.bind(this);
   }
-  
+  clickHandler(item) {
+    this.props.clickItemHandler ? this.props.clickItemHandler.clickHandler(item) : null
+  }
   render() {
 
     /* Custom Styling config - Start */
-
     let className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, {}, this.props.style);
     let imgStyle = this.props.imgStyle ? { ...this.props.imgStyle } : { height: '30px', margin: '5px -4px !important' }
@@ -17,17 +19,31 @@ class GridItem extends Component {
     /* Custom Content config - Start */
 
     let content = (
-      <div className={className} style={style} onClick={this.props.onClick}>
+      <div
+          className={className}
+          style={style}
+          onClick={e => {
+            e.stopPropagation()
+            this.clickHandler(this.props.item)
+          }
+        }>
       {this.props.children}
       </div>
     );
     if (!this.props.children) {
       content = (
-        <div className={className} style={style}>
+        <div
+          className={className}
+          style={style}
+          onClick={e => {
+            e.stopPropagation()
+            this.clickHandler(this.props.item)
+          }
+        }>
         {(this.props.type === 'image') ? (
-          <img src={this.props.value} style={imgStyle} />
+          <img src={this.props.value} style={imgStyle}/>
         ) : (
-          <p onClick={this.props.onClick}>{this.props.value}</p>
+          <p>{this.props.value}</p>
         )}
         </div>
       );
