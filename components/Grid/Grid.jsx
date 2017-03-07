@@ -121,6 +121,7 @@ class Grid extends Component {
 
   render() {
     /* Custom Styling config - Start */
+    console.log('grid props', this.props);
     const className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, this.props.style);
     if (this.props.height) {

@@ -4,7 +4,6 @@ import GridItem from './GridItem.jsx';
 class GridRow extends Component {
 
   render() {
-
     const className = this.props.className ? ['col-lg-12 list', ...this.props.className] : ['col-lg-12 list'];
     const style = Object.assign({}, {}, this.props.style);
 

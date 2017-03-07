@@ -5,8 +5,11 @@ class GridItem extends Component {
     super(props);
     this.clickHandler = this.clickHandler.bind(this);
   }
-  clickHandler(item) {
-    this.props.clickItemHandler ? this.props.clickItemHandler.clickHandler(item) : null
+  clickHandler(e, item) {
+    if (this.props.clickItemHandler) {
+      e.stopPropagation();
+      this.props.clickItemHandler.clickHandler(item)
+    }
   }
   render() {
 
@@ -22,11 +25,7 @@ class GridItem extends Component {
       <div
           className={className}
           style={style}
-          onClick={e => {
-            e.stopPropagation()
-            this.clickHandler(this.props.item)
-          }
-        }>
+          onClick={e => this.clickHandler(e, this.props.item)}>
       {this.props.children}
       </div>
     );
@@ -35,11 +34,7 @@ class GridItem extends Component {
         <div
           className={className}
           style={style}
-          onClick={e => {
-            e.stopPropagation()
-            this.clickHandler(this.props.item)
-          }
-        }>
+          onClick={e => this.clickHandler(e, this.props.item)}>
         {(this.props.type === 'image') ? (
           <img src={this.props.value} style={imgStyle}/>
         ) : (
