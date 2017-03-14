@@ -52,7 +52,7 @@ class GridRow extends Component {
 
               if (this.props.item[column.field].cellDefinition) {
                 const cellDefinition = cells.find(c => c.id === this.props.item[column.field].cellDefinition);
-                itemClickHandler = this.props.itemClickHandlers.find(handler => handler.cellDefinition === cellDefinition.id)
+                itemClickHandler = this.props.itemClickHandlers ? this.props.itemClickHandlers.find(handler => handler.cellDefinition === cellDefinition.id) : null
                 if (cellDefinition) {
                   if (cellDefinition.className) {
                     itemClassName = [...itemClassName, ...cellDefinition.className];

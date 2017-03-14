@@ -16,8 +16,8 @@ class SampleGrid extends Component {
       loading: false,
       basicGrid: {
         metadata: [
-          { field: 'name', title: 'Name', ascending: true},
-          { field: 'description', title: 'Description', ascending: false}
+          { field: 'name', title: 'Name', ascending: true },
+          { field: 'description', title: 'Description' }
         ],
         data: [
           { name: {value: 'Bartholomew'}, description: 'developer'},
