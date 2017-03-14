@@ -6,6 +6,7 @@ class GridColumnHeader extends GridItem {
     super(props);
     this.state = { ascending: props.ascending };
     this.sorting = this.sorting.bind(this);
+    console.log('grid column header props', props);
   }
 
   sorting() {
@@ -40,7 +41,7 @@ class GridColumnHeader extends GridItem {
       }
       content = (
         <div className={className} style={style}>
-          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={clickableStyle} onClick={this.sorting}>{this.props.title}&nbsp;{sort}</span></h2>
+          <h2 onClick={this.props.onClick} style={{ width: 'auto' }}><span style={clickableStyle} id={this.props.id ? this.props.id: ''} onClick={this.props.ascending !== undefined ? this.sorting : null}>{this.props.title}&nbsp;{sort}</span></h2>
         </div>
       );
     }

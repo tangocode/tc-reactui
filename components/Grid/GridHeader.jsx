@@ -30,6 +30,7 @@ const GridHeader = (
     content = (
       <div className={className} style={style}>
         {columns.map(column => {
+          console.log('column', column);
           let columnClassName = [];
           let columnStyle = Object.assign({}, { width: `${100 / props.columns.length}%` });
           if (column.headerDefinition) {
@@ -41,11 +42,11 @@ const GridHeader = (
               if (cellDefinition.style) {
                 columnStyle = Object.assign({}, columnStyle, cellDefinition.style);
               }
-            }
+            }''
           }
 
           return (
-            <GridColumnHeader column={column} className={columnClassName} style={columnStyle} field={column.field} title={column.title} ascending={column.ascending} onSorting={props.onSorting}/>
+            <GridColumnHeader id={column.id} column={column} className={columnClassName} style={columnStyle} field={column.field} title={column.title} ascending={column.ascending} onSorting={props.onSorting}/>
           );
         })}
       </div>
