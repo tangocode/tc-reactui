@@ -41,11 +41,11 @@ const GridHeader = (
               if (cellDefinition.style) {
                 columnStyle = Object.assign({}, columnStyle, cellDefinition.style);
               }
-            }
+            }''
           }
 
           return (
-            <GridColumnHeader column={column} className={columnClassName} style={columnStyle} field={column.field} title={column.title} ascending={column.ascending} onSorting={props.onSorting}/>
+            <GridColumnHeader id={column.id} column={column} className={columnClassName} style={columnStyle} field={column.field} title={column.title} ascending={column.ascending} onSorting={props.onSorting}/>
           );
         })}
       </div>
