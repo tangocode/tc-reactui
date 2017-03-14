@@ -178,7 +178,6 @@ class Grid extends Component {
       if (this.props.onSorting) {
         onSorting = this.props.onSorting;
       }
-      console.log('columns clums', columns);
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />

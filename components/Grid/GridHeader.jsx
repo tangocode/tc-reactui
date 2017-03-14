@@ -30,7 +30,6 @@ const GridHeader = (
     content = (
       <div className={className} style={style}>
         {columns.map(column => {
-          console.log('column', column);
           let columnClassName = [];
           let columnStyle = Object.assign({}, { width: `${100 / props.columns.length}%` });
           if (column.headerDefinition) {

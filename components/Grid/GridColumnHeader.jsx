@@ -6,7 +6,6 @@ class GridColumnHeader extends GridItem {
     super(props);
     this.state = { ascending: props.ascending };
     this.sorting = this.sorting.bind(this);
-    console.log('grid column header props', props);
   }
 
   sorting() {
