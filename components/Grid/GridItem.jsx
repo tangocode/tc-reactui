@@ -8,11 +8,11 @@ class GridItem extends Component {
   clickHandler(e, item) {
     if (this.props.clickItemHandler) {
       e.stopPropagation();
-      this.props.clickItemHandler.clickHandler(item)
+      this.props.forceNoUpdate();
+      this.props.clickItemHandler.clickHandler(item);
     }
   }
   render() {
-
     /* Custom Styling config - Start */
     let className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, {}, this.props.style);

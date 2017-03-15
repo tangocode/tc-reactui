@@ -68,6 +68,7 @@ class GridBody extends Component {
                 cells={cells} 
                 rowClickListener={this.rowClickListener}
                 itemClickHandlers={this.props.itemClickHandlers}
+                forceNoUpdate={this.props.forceNoUpdate}
               />
             );
           })}

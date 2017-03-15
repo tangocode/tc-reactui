@@ -72,6 +72,7 @@ class GridRow extends Component {
                 type={type}
                 imgStyle={imgStyle}
                 clickItemHandler={itemClickHandler}
+                forceNoUpdate={this.props.forceNoUpdate}
               />
             );
           })}
