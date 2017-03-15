@@ -94,13 +94,10 @@ class Grid extends Component {
     }
   }
   forceNoUpdate() {
-    console.log('force no update called');
     this.setState({ shouldUpdate: false })
   }
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('should component update called');
     if (!nextState.shouldUpdate) {
-      console.log('compenent shouldnt fucking update');
       return false;
     }
     return true;
@@ -134,7 +131,6 @@ class Grid extends Component {
   }
 
   render() {
-    console.log('re rendering......... fuck');
     /* Custom Styling config - Start */
     const className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, this.props.style);
