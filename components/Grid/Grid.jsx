@@ -7,16 +7,19 @@ class Grid extends Component {
     super(props)
     this.state = {
       data: this.props.data ? this.props.data : [],
-      showLoading: this.props.showLoading
+      showLoading: this.props.showLoading,
+      shouldUpdate: true
     }
     this.sortLocal = this.sortLocal.bind(this);
     this.handleScroll = this.handleScroll.bind(this);
     this.handleDivScroll = this.handleDivScroll.bind(this);
     this.containerDidMount = this.containerDidMount.bind(this);
     this.rowClickListener = this.rowClickListener.bind(this);
+    this.forceNoUpdate = this.forceNoUpdate.bind(this);
   }
 
   sortLocal(field, ascending) {
+    this.setState({ shouldUpdate: true })
     let sortedData;
     if (ascending) {
       sortedData = this.state.data.sort((a, b) => {
@@ -59,7 +62,7 @@ class Grid extends Component {
         return 0;
       });
     }
-    this.setState({data: sortedData});
+    this.setState({ data: sortedData });
   }
   
   handleScroll() {
@@ -90,7 +93,18 @@ class Grid extends Component {
       window.addEventListener("scroll", this.handleScroll);
     }
   }
-
+  forceNoUpdate() {
+    console.log('force no update called');
+    this.setState({ shouldUpdate: false })
+  }
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('should component update called');
+    if (!nextState.shouldUpdate) {
+      console.log('compenent shouldnt fucking update');
+      return false;
+    }
+    return true;
+  }
   componentWillUnmount() {
     if (!this.props.height) {
       window.removeEventListener("scroll", this.handleScroll);
@@ -120,6 +134,7 @@ class Grid extends Component {
   }
 
   render() {
+    console.log('re rendering......... fuck');
     /* Custom Styling config - Start */
     const className = this.props.className ? [...this.props.className] : [];
     let style = Object.assign({}, this.props.style);
@@ -181,7 +196,17 @@ class Grid extends Component {
       content = (
         <div className={className} style={style} ref={this.containerDidMount}>
           <GridHeader className={this.props.headerClassName} style={this.props.headerStyle} columns={columns} cells={cells} onSorting={onSorting} />
-          <GridBody className={this.props.bodyClassName} {...this.props} style={this.props.bodyStyle} columns={columns} rows={rows} cells={cells} data={this.state.data} rowClickListener={this.rowClickListener}/>
+          <GridBody 
+            className={this.props.bodyClassName} 
+            {...this.props} 
+            style={this.props.bodyStyle} 
+            columns={columns} 
+            rows={rows} 
+            cells={cells} 
+            data={this.state.data} 
+            rowClickListener={this.rowClickListener}
+            forceNoUpdate={this.forceNoUpdate}
+          />
           {loading}
         </div>
       );
