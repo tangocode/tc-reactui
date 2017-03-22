@@ -1,6 +1,6 @@
 {
   "name": "tc-reactui",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Boilerplate for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
   "main": "index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "file-loader": "^0.9.0",
     "image-webpack-loader": "^3.0.0",
     "style-loader": "^0.13.1",
-    "url-loader": "^0.5.7",    
+    "url-loader": "^0.5.7",
     "babel-runtime": "^6.3.19",
     "react": "^0.14.5",
     "react-dnd": "^2.1.4",
